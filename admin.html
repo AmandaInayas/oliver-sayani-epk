@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EPK Admin</title>
+    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+</head>
+<body>
+    <div id="nc-root"></div>
+    <script>
+        CMS.init({
+            config: {
+                backend: {
+                    name: 'github',
+                    repo: 'AmandaInayas/oliver-sayani-epk',
+                    branch: 'main'
+                },
+                media_folder: "images",
+                public_folder: "/images",
+                collections: [{
+                    name: "pages",
+                    label: "Pages",
+                    files: [{
+                        label: "EPK Content",
+                        name: "index",
+                        file: "index.html",
+                        fields: [
+                            {label: "Artist Name", name: "artist_name", widget: "string"},
+                            {label: "Bio", name: "bio", widget: "text"},
+                            {label: "Press Quote", name: "press_quote", widget: "text"}
+                        ]
+                    }]
+                }]
+            }
+        });
+    </script>
+</body>
+</html>
